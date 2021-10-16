@@ -9,7 +9,7 @@ export const Layout: React.FC = ({ children }) => {
       <main className={"container mx-auto p-4"}>
         <div className={"flex items-start w-full space-x-4"}>
           <Sidebar />
-          <main>{children}</main>
+          <main className={"w-10/12"}>{children}</main>
         </div>
       </main>
     </>
