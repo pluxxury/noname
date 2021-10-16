@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyB3ov0QELButXUQIaBpHG6uehBUDL5sREo",
@@ -12,3 +12,13 @@ const firebaseApp = initializeApp({
 });
 
 export const database = getFirestore(firebaseApp);
+
+const addData = async () => {
+  await setDoc(doc(database, "products", "LA"), {
+    id: 6,
+    title: "CA",
+    description: "USA",
+  });
+};
+
+addData();
